@@ -71,7 +71,7 @@ Pile<T> Pile<T>::push(const T& elem){
 
 template<typename T>
 Pile<T> Pile<T>::pop(){
-    nbr_elem--;
+    nbr_elem --;
     return *this;
 }
 

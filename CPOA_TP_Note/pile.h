@@ -15,6 +15,9 @@ public:
     Pile();
     Pile(const Pile& p);
 
+    //Probleme de corruption mémoire et double free
+    // Vu avec Monsieur GrosJean
+
     ~Pile(){
         //std::cout << data << std::endl;
         //delete[] data;
