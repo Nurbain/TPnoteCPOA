@@ -23,6 +23,11 @@ Pile<T>::Pile(const Pile& p){
 }
 
 template<typename T>
+T Pile<T>::operator()(int index)const {
+    return data[index];
+}
+
+template<typename T>
 T Pile<T>::operator[](int index)const{
     return data[index];
 }
@@ -93,10 +98,15 @@ Pile<T> Pile<T>::operator+(const Pile<T>& pile){
     return newPile;
 }
 
-template<typename T1, typename T2>
-Pile<T2> convert(const Pile<T2>& p){
-
+template<typename T, typename T2>
+Pile<T> convert(const Pile<T2>& p){
+    Pile<T> newPile = Pile<T>();
+    for(int i=0;i<p.getNbrElem();i++){
+        p.push((T)p.getPtr()[i]);
+    }
 }
+
+
 
 
 

@@ -24,6 +24,8 @@ public:
     T operator[](int index)const;
     T& operator[](int index);
 
+    T operator()(int index)const;
+
     T* getPtr() const;
     int getSize() const;
     int getNbrElem() const;
@@ -43,7 +45,6 @@ public:
        }
        return os;
     }
-
 
 };
 

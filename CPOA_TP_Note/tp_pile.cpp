@@ -1,5 +1,5 @@
 #include "pile.h"
-//#include "pileoper.h"
+#include "pileoper.h"
 
 int main()
 {
@@ -26,7 +26,7 @@ int main()
 
 	PileInt pi2(pi);
 	std::cout << "copy constructor"<< std::endl;
-    std::cout << pi2 << std::endl;
+    std::cout << "pi2 : " << pi2 << std::endl;
 
 
 	for (unsigned int i=0; i< 6; ++i)
@@ -36,9 +36,10 @@ int main()
 	}
 
 	std::cout << "depile 6 fois ..."<< std::endl;
-    std::cout << pi<< std::endl;
-    std::cout << pi2<< std::endl;
+    std::cout << "nouveau pi : " << pi<< std::endl;
+    std::cout <<  "nouveau pi2 : "<<  pi2<< std::endl;
 
+    std::cout << "Deuxieme en partant du haut dans pi2: " << pi2(1)<< std::endl;
 
    // PileInt pi3 = pi+pi2;
 
@@ -48,7 +49,7 @@ int main()
 
     */
 
-	PileInt pi4;
+    PileInt pi4;
 
 
     /*
@@ -77,14 +78,24 @@ int main()
 	ps.pop();
 
 
-	Pile<float> pf = convert<float>(pi4);
+    */
+    Pile<float> pf = Pile<float>();
+    pf.push(1.);
+    pf.push(2.);
+    pf.push(3.);
+    // std::cout << pf << std::endl;
 	// Question: Pourquoi peut-on mettre un seul paramètre template ?
-
+    /*
 	std::cout << "conversion en float "<< std::endl;
 	std::cout << pf << std::endl;
-
+    */
 	PileOper po1(pf);
-	PileOper po2(pf);
+    std::cout << "po 1 : " << po1 << std::endl;
+    bool testempty = po1.empty();
+    std::cout << "po1 empty ? " << testempty << std::endl;
+    double sum = po1.compactSomme();
+    std::cout << "Sum po 1 : " << sum << std::endl;
+    /*PileOper po2(pf);
 	std::cout << "scalaire de "<< po1 << std::endl;
 	std::cout << "par "<< po2 << std::endl;
 	std::cout << "donne "<< scalaire(po1,po2)<< std::endl;
